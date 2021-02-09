@@ -7,7 +7,7 @@ const MovieRow = ({ title, movies }) => {
       <div className="flex flex-nowrap overflow-x-scroll no-scrollbar">
         {movies.map((movie) => (
           <img
-            className="w-60 h-100"
+            className="h-80"
             key={movie.id}
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           />
