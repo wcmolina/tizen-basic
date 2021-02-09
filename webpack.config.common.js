@@ -2,15 +2,19 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = (env = {}) => ({
+// Important: 'projectName' has to match the name (-n flag) specified in the "tizen:create" script in package.json
+const projectName = "Project";
+const projectPath = `./tizen/${projectName}`;
+
+module.exports = {
   devtool: "source-map",
   entry: "./src/index.js",
   output: {
-    path: path.join(__dirname, `/tizen/${env.PROJECT_NAME}`),
+    path: path.join(__dirname, projectPath),
     filename: "js/main.js",
   },
   devServer: {
-    contentBase: `./tizen/${env.PROJECT_NAME}`,
+    contentBase: projectPath,
     port: 3000,
   },
   module: {
@@ -35,4 +39,4 @@ module.exports = (env = {}) => ({
       filename: "css/style.css",
     }),
   ],
-});
+};
