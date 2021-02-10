@@ -6,7 +6,7 @@ const HomeScreen = () => {
   const [movies, setMovies] = React.useState([]);
 
   React.useEffect(() => {
-    const getLatestMovies = async () => {
+    const getTopRatedMovies = async () => {
       try {
         const response = await Axios.get(
           "https://api.themoviedb.org/3/movie/top_rated",
@@ -27,13 +27,15 @@ const HomeScreen = () => {
       }
     };
 
-    getLatestMovies();
+    getTopRatedMovies();
   }, []);
 
-  return (
+  return movies.length > 0 ? (
     <>
       <MovieRow title={"Top Rated"} movies={movies} />
     </>
+  ) : (
+    <p>No movies</p>
   );
 };
 
