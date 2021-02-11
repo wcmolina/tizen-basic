@@ -2,10 +2,6 @@ import { Lrud } from "lrud";
 
 const navigation = new Lrud();
 
-navigation.registerNode("root", {
-  orientation: "vertical",
-});
-
 window.navigation = navigation;
 
 navigation.on("move", (event) => {

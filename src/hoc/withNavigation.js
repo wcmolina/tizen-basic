@@ -6,6 +6,9 @@ import { cleanObject } from "../utils/cleanObject";
 
 const withNavigation = (navProps = {}) => (Component) => {
   const Navigable = (props) => {
+    const { id = nanoid(), ...other } = props;
+    const { parent } = React.useContext(NavigationContext);
+
     useEffect(() => {
       // Cleanup
       return () => {
@@ -14,9 +17,6 @@ const withNavigation = (navProps = {}) => (Component) => {
         }
       };
     }, []);
-
-    const { id = nanoid(), ...other } = props;
-    const { parent } = React.useContext(NavigationContext);
 
     if (!navigation.getNode(id)) {
       navigation.registerNode(id, cleanObject({ parent, ...navProps }));

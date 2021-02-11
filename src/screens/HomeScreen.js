@@ -1,5 +1,6 @@
 import React from "react";
 import Row from "../components/Row";
+import RowList from "../components/RowList";
 import Axios from "axios";
 
 const HomeScreen = () => {
@@ -31,7 +32,7 @@ const HomeScreen = () => {
   }, []);
 
   return movies.length > 0 ? (
-    <>
+    <RowList id="home-screen">
       <Row
         id="top-rated"
         className="flex no-wrap"
@@ -44,7 +45,7 @@ const HomeScreen = () => {
         title={"Now Playing"}
         movies={movies}
       />
-    </>
+    </RowList>
   ) : (
     <p>No movies</p>
   );

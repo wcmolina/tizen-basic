@@ -4,7 +4,7 @@ import Card from "./Card";
 import withNavigation from "../hoc/withNavigation";
 
 const onMove = (event) => {
-  console.log("Moving between elements in a row");
+  console.log("Cool, I'll move to the next/prev card");
 };
 
 const Row = ({ id, title, movies, className }) => {
