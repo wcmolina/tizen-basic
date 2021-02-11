@@ -1,13 +1,19 @@
 $background-color: #202124;
 $text-color: #ededed;
 
-html {
-  font-family: sans-serif;
-}
-
+html,
 body {
+  height: 100%;
+  font-family: sans-serif;
   background-color: $background-color;
   color: $text-color;
+  overflow: hidden;
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+  position: relative;
 }
 
 .flex {
@@ -45,4 +51,12 @@ body {
 
 .h-80 {
   height: 20rem;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.absolute {
+  position: absolute;
 }

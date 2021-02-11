@@ -1,5 +1,5 @@
 import React from "react";
-import MovieRow from "../components/MovieRow";
+import Row from "../components/Row";
 import Axios from "axios";
 
 const HomeScreen = () => {
@@ -32,7 +32,18 @@ const HomeScreen = () => {
 
   return movies.length > 0 ? (
     <>
-      <MovieRow title={"Top Rated"} movies={movies} />
+      <Row
+        id="top-rated"
+        className="flex no-wrap"
+        title={"Top Rated"}
+        movies={movies}
+      />
+      <Row
+        id="now-playing"
+        className="flex no-wrap"
+        title={"Now Playing"}
+        movies={movies}
+      />
     </>
   ) : (
     <p>No movies</p>
