@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { nanoid } from "nanoid";
 import navigation from "../utils/navigation";
 import NavigationContext from "../context/NavigationContext";
-import { cleanObject } from "../utils/cleanObject";
+import { cleanObject } from "../utils/common";
 
 const withNavigation = (navProps = {}) => (Component) => {
   const Navigable = (props) => {
