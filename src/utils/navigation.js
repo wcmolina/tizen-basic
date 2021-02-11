@@ -9,12 +9,10 @@ navigation.registerNode("root", {
 window.navigation = navigation;
 
 navigation.on("move", (event) => {
-  console.log("Move", event);
+  event.node && event.node.onMove && event.node.onMove(event);
 });
 
-navigation.on("focus", (id) => {
-  console.log("Focus", id);
-});
+navigation.on("focus", (event) => {});
 
 // Todo: Throttle this?
 document.onkeydown = (event) => {

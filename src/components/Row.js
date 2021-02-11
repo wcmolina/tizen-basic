@@ -3,6 +3,10 @@ import NavigationContext from "../context/NavigationContext";
 import Card from "./Card";
 import withNavigation from "../hoc/withNavigation";
 
+const onMove = (event) => {
+  console.log("Moving between elements in a row");
+};
+
 const Row = ({ id, title, movies, className }) => {
   return movies.length > 0 ? (
     <>
@@ -24,4 +28,4 @@ const Row = ({ id, title, movies, className }) => {
   );
 };
 
-export default withNavigation({ orientation: "horizontal" })(Row);
+export default withNavigation({ orientation: "horizontal", onMove })(Row);
