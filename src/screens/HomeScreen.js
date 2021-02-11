@@ -3,6 +3,7 @@ import Row from "../components/Row";
 import RowList from "../components/RowList";
 import Axios from "axios";
 import navigation from "../utils/navigation";
+import CardDetail from "../components/CardDetail";
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -47,20 +48,23 @@ export default class HomeScreen extends Component {
     return this.state.loading ? (
       <p>Loading...</p>
     ) : (
-      <RowList id="home-screen">
-        <Row
-          id="top-rated"
-          className="flex no-wrap"
-          title={"Top Rated"}
-          movies={this.state.movies}
-        />
-        <Row
-          id="now-playing"
-          className="flex no-wrap"
-          title={"Now Playing"}
-          movies={this.state.movies}
-        />
-      </RowList>
+      <>
+        <CardDetail />
+        <RowList id="home-screen">
+          <Row
+            id="top-rated"
+            className="flex no-wrap"
+            title={"Top Rated"}
+            movies={this.state.movies}
+          />
+          <Row
+            id="now-playing"
+            className="flex no-wrap"
+            title={"Now Playing"}
+            movies={this.state.movies}
+          />
+        </RowList>
+      </>
     );
   }
 }
