@@ -23,9 +23,8 @@ const Row = ({ id, title, movies, className }) => {
         </NavigationContext.Provider>
       </div>
     </>
-  ) : (
-    <p>No movies to show</p>
-  );
+  ) : // Todo: handle this in the parent component?
+  null;
 };
 
 export default withNavigation({ orientation: "horizontal", onMove })(Row);
