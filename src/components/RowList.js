@@ -18,11 +18,30 @@ const RowList = (props) => {
   const onMove = (event = {}) => {
     try {
       // Given only cards are focusable and they are in rows, we need to calc the card's row/parent height
-      const { offset = 1, leave = {}, node = {} } = event;
+      const { offset = 1, leave = {}, enter = {}, node = {} } = event;
       const parentEl = document.getElementById(leave.parent);
       const height = getComputedHeight(parentEl);
 
       const nextPosition = offset === 1 ? position - height : position + height;
+
+      // Todo: move these to an util file
+      if (offset === 1) {
+        // Fade out (leave element's parent)
+        anime({
+          targets: `#${leave.parent}`,
+          duration: 350,
+          opacity: 0,
+          easing: "linear",
+        });
+      } else {
+        // Fade in (enter element's parent)
+        anime({
+          targets: `#${enter.parent}`,
+          duration: 350,
+          opacity: 1,
+          easing: "linear",
+        });
+      }
 
       anime({
         targets: `#${node.id}`,
