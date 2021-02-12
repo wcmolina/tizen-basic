@@ -6,7 +6,7 @@ import { cleanObject } from "../utils/common";
 
 const withNavigation = (navProps = {}) => (Component) => {
   const Navigable = (props) => {
-    const { id = nanoid(), ...other } = props;
+    const { id = nanoid(), className = null, ...other } = props;
     const { parent } = React.useContext(NavigationContext);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const withNavigation = (navProps = {}) => (Component) => {
     }
 
     return (
-      <div id={id}>
+      <div id={id} className={className}>
         <Component id={id} {...other} />
       </div>
     );

@@ -38,7 +38,7 @@ export default class HomeScreen extends Component {
         loading: false,
       });
 
-      navigation.assignFocus("home-screen");
+      navigation.assignFocus("rowlist-home");
     } catch (error) {
       console.log(error);
     }
@@ -50,31 +50,24 @@ export default class HomeScreen extends Component {
     ) : (
       <>
         <CardDetail />
-        <RowList
-          id="home-screen"
-          className="absolute bottom-0 left-0 right-0 ml-4 h-140"
-        >
+        <RowList id="rowlist-home" className="row-list-container">
           <Row
-            id="top-rated"
-            className="flex no-wrap"
+            id="row-top-rated"
             title={"Top Rated"}
             movies={this.state.movies}
           />
           <Row
-            id="now-playing"
-            className="flex no-wrap"
+            id="row-now-playing"
             title={"Now Playing"}
             movies={this.state.movies}
           />
           <Row
-            id="upcoming"
-            className="flex no-wrap"
+            id="row-upcoming"
             title={"Upcoming"}
             movies={this.state.movies}
           />
           <Row
-            id="trending"
-            className="flex no-wrap"
+            id="row-trending"
             title={"Trending"}
             movies={this.state.movies}
           />

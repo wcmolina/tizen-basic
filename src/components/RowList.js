@@ -5,28 +5,24 @@ import { getComputedHeight } from "../utils/calc";
 import anime from "animejs";
 
 // Stateless component containing row list content
-const RowListContent = ({ id, className = "", children }) => (
-  <div className={className}>
-    <NavigationContext.Provider value={{ parent: id }}>
-      {children}
-    </NavigationContext.Provider>
-  </div>
+const RowListContent = ({ id, children }) => (
+  <NavigationContext.Provider value={{ parent: id }}>
+    {children}
+  </NavigationContext.Provider>
 );
 
 const RowList = (props) => {
   // Not really a state variable, instance variable works just fine
-  let position = 594;
+  let position = 0;
 
   const onMove = (event = {}) => {
     try {
       // Given only cards are focusable and they are in rows, we need to calc the card's row/parent height
       const { offset = 1, leave = {}, node = {} } = event;
-      //const parentEl = document.getElementById(leave.parent);
-      //const height = getComputedHeight(parentEl);
-      const height = 392;
+      const parentEl = document.getElementById(leave.parent);
+      const height = getComputedHeight(parentEl);
 
       const nextPosition = offset === 1 ? position - height : position + height;
-      console.log(nextPosition);
 
       anime({
         targets: `#${node.id}`,

@@ -21,36 +21,19 @@ body {
 }
 
 .flex > * {
-  margin: 5px;
+  margin: 0 5px;
 }
 
 .flex {
-  margin: -5px;
+  margin: 0 -5px;
 }
 
 .flex-nowrap {
   flex-wrap: nowrap;
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-.overflow-x-scroll {
-  overflow-x: scroll;
-}
-
-.h-full {
-  height: 100%;
-}
-
-.w-60 {
-  width: 15rem;
-}
-
-.h-80 {
-  height: 20rem;
+.h-72 {
+  height: 18rem;
 }
 
 .h-140 {
@@ -61,40 +44,30 @@ body {
   padding: 1rem;
 }
 
-.ml-4 {
-  margin-left: 1rem;
-}
-
 .inline-block {
   display: inline-block;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.top-0 {
-  top: 0;
-}
-
-.bottom-0 {
-  bottom: 0;
-}
-
-.left-0 {
-  left: 0;
-}
-
-.right-0 {
-  right: 0;
-}
-
 // Meh, regular classes from now on
 .focus-indicator {
+  @extend .h-72;
+  width: 12rem;
   position: absolute;
   border: 0.25rem solid white;
-  height: 20.625rem;
-  width: 13.75rem;
-  bottom: 10.12rem;
-  left: 0.55rem;
+  bottom: 13.5rem;
+  left: 0.75rem;
+}
+
+.row-list-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 1rem;
+  height: 35rem;
+}
+
+.row-title {
+  margin: 0;
+  padding: 1rem 0 0.5rem 0;
 }

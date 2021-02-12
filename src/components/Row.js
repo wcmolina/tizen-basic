@@ -4,10 +4,10 @@ import Card from "./Card";
 import withNavigation from "../hoc/withNavigation";
 
 // Stateless component containing row's content
-const RowContent = ({ id, title, movies, className }) => (
+const RowContent = ({ id, title, movies }) => (
   <>
-    <h2>{title}</h2>
-    <div className={className}>
+    <h2 className="row-title">{title}</h2>
+    <div className="flex no-wrap">
       <NavigationContext.Provider value={{ parent: id }}>
         {movies.map((movie) => (
           <Card
