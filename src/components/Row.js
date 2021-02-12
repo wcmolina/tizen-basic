@@ -1,7 +1,9 @@
 import React from "react";
+import anime from "animejs";
 import NavigationContext from "../context/NavigationContext";
 import Card from "./Card";
 import withNavigation from "../hoc/withNavigation";
+import { getComputedWidth } from "../utils/calc";
 
 // Stateless component containing row's content
 const RowContent = ({ id, title, movies }) => (
@@ -22,8 +24,21 @@ const RowContent = ({ id, title, movies }) => (
 );
 
 const Row = (props) => {
+  let position = 0;
   const onMove = (event) => {
-    console.log("Cool, I'll move to the next/prev card");
+    const { offset = 1, leave = {} } = event;
+    const leaveEl = document.getElementById(leave.id);
+    const width = getComputedWidth(leaveEl);
+    const newPosition = offset === 1 ? position - width : position + width;
+
+    anime({
+      targets: `#${leave.parent}`,
+      translateX: [position, newPosition],
+      duration: 350,
+      easing: "linear",
+    });
+
+    position = newPosition;
   };
 
   const Navigable = withNavigation({

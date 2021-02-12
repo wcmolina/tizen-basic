@@ -21,11 +21,7 @@ body {
 }
 
 .flex > * {
-  margin: 0 5px;
-}
-
-.flex {
-  margin: 0 -5px;
+  margin: 0 0.5rem;
 }
 
 .flex-nowrap {
@@ -44,18 +40,14 @@ body {
   padding: 1rem;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
 // Meh, regular classes from now on
 .focus-indicator {
   @extend .h-72;
   width: 12rem;
   position: absolute;
-  border: 0.25rem solid white;
+  border: 0.25rem solid #ffffff;
   bottom: 13.5rem;
-  left: 0.75rem;
+  left: 2rem;
 }
 
 .row-list-container {
@@ -63,11 +55,18 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  margin-left: 1rem;
+  margin-left: 1.75rem;
   height: 35rem;
 }
 
 .row-title {
   margin: 0;
   padding: 1rem 0 0.5rem 0;
+}
+
+.row-card {
+  @extend .h-72;
+  width: 12rem;
+  object-fit: cover;
+  display: inline-block;
 }
