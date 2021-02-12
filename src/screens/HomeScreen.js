@@ -66,6 +66,18 @@ export default class HomeScreen extends Component {
             title={"Now Playing"}
             movies={this.state.movies}
           />
+          <Row
+            id="upcoming"
+            className="flex no-wrap"
+            title={"Upcoming"}
+            movies={this.state.movies}
+          />
+          <Row
+            id="trending"
+            className="flex no-wrap"
+            title={"Trending"}
+            movies={this.state.movies}
+          />
         </RowList>
         <div className="focus-indicator"></div>
       </>

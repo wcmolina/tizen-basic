@@ -10,6 +10,7 @@
     "build:prod": "webpack --config ./webpack.config.prod.js"
   },
   "dependencies": {
+    "animejs": "^3.2.1",
     "axios": "^0.21.1",
     "core-js": "3.8",
     "lrud": "^5.1.2",
