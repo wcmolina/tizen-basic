@@ -4,10 +4,12 @@ import withNavigation from "../hoc/withNavigation";
 import { getComputedHeight } from "../utils/calc";
 
 // Stateless component containing row list content
-const RowListContent = ({ id, children }) => (
-  <NavigationContext.Provider value={{ parent: id }}>
-    {children}
-  </NavigationContext.Provider>
+const RowListContent = ({ id, className = "", children }) => (
+  <div className={className}>
+    <NavigationContext.Provider value={{ parent: id }}>
+      {children}
+    </NavigationContext.Provider>
+  </div>
 );
 
 const RowList = (props) => {

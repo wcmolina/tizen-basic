@@ -53,10 +53,48 @@ body {
   height: 20rem;
 }
 
+.h-140 {
+  height: 35rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .inline-block {
   display: inline-block;
 }
 
 .absolute {
   position: absolute;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+// Meh, regular classes from now on
+.focus-indicator {
+  position: absolute;
+  border: 0.25rem solid white;
+  height: 20.625rem;
+  width: 13.75rem;
+  bottom: 10.12rem;
+  left: 0.55rem;
 }

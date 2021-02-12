@@ -50,7 +50,10 @@ export default class HomeScreen extends Component {
     ) : (
       <>
         <CardDetail />
-        <RowList id="home-screen">
+        <RowList
+          id="home-screen"
+          className="absolute bottom-0 left-0 right-0 ml-4 h-140"
+        >
           <Row
             id="top-rated"
             className="flex no-wrap"
@@ -64,6 +67,7 @@ export default class HomeScreen extends Component {
             movies={this.state.movies}
           />
         </RowList>
+        <div className="focus-indicator"></div>
       </>
     );
   }
