@@ -1,7 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { truncate } from "../utils/common";
 
 const CardDetail = () => {
-  return <div className="h-80 p-4">More info about a Card here</div>;
+  const cardDetails = useSelector((state) => state.home.cardDetails);
+
+  return (
+    <div className="card-detail">
+      <h1>{cardDetails.title || ""}</h1>
+      <p className="card-detail-description">
+        {truncate(cardDetails.overview || "", 500)}
+      </p>
+    </div>
+  );
 };
 
 export default CardDetail;

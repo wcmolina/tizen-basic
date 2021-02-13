@@ -72,3 +72,19 @@ body {
   object-fit: cover;
   display: inline-block;
 }
+
+.card-detail {
+  margin-left: 4rem;
+  padding: 2rem 0;
+  > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.card-detail-description {
+  width: 40rem;
+  color: lightgray;
+  font-size: 1.25rem;
+  font-weight: 200;
+}

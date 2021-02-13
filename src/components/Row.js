@@ -35,11 +35,7 @@ const Row = ({ id, title, movies }) => {
           onMove={onMove}
         >
           {movies.map((movie) => (
-            <Card
-              id={`${id}-card-${movie.id}`}
-              key={movie.id}
-              imgUrl={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-            />
+            <Card id={`${id}-card-${movie.id}`} key={movie.id} movie={movie} />
           ))}
         </Navigable>
       </>
