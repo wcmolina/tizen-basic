@@ -5,7 +5,7 @@ import NavigationContext from "../context/NavigationContext";
 import { cleanObject } from "../utils/common";
 
 const Navigable = ({
-  id = nanoid(),
+  id = `navigable_${nanoid()}`,
   className = null,
   children,
   isFocusable,
