@@ -1,3 +1,7 @@
+/*
+@Deprecated.
+Use Navigable component instead. Leaving this here just for reference
+*/
 import React, { useEffect } from "react";
 import { nanoid } from "nanoid";
 import navigation from "../utils/navigation";

@@ -43,11 +43,13 @@ body {
 // Meh, regular classes from now on
 .focus-indicator {
   @extend .h-72;
+  z-index: 999;
   width: 12rem;
   position: absolute;
   border: 0.25rem solid #ffffff;
-  bottom: 13.5rem;
-  left: 2rem;
+  bottom: 11.5rem;
+  left: 4.75rem;
+  box-shadow: inset 0px 0px 10px 5px rgba(30, 30, 30, 0.5);
 }
 
 .row-list-container {
@@ -55,13 +57,13 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  margin-left: 1.75rem;
+  margin-left: 4.5rem;
   height: 35rem;
 }
 
 .row-title {
   margin: 0;
-  padding: 1rem 0 0.5rem 0;
+  padding: 2.5rem 0 1rem 0;
 }
 
 .row-card {

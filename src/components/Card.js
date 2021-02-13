@@ -1,8 +1,12 @@
 import React from "react";
-import withNavigation from "../hoc/withNavigation";
+import Navigable from "./Navigable";
 
-const Card = ({ imgUrl }) => {
-  return <img src={imgUrl} className="row-card" />;
+const Card = ({ id, imgUrl }) => {
+  return (
+    <Navigable id={id} isFocusable={true}>
+      <img src={imgUrl} className="row-card" />
+    </Navigable>
+  );
 };
 
-export default withNavigation({ isFocusable: true })(Card);
+export default Card;
