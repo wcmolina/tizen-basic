@@ -17,7 +17,7 @@ const Row = ({ id, title, movies }) => {
     anime({
       targets: `#${leave.parent}`,
       translateX: [position, newPosition],
-      duration: 350,
+      duration: 250,
       easing: "linear",
     });
 

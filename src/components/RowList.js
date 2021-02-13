@@ -27,7 +27,7 @@ const RowList = ({ id, className, children }) => {
         // Fade out (the parent of the row that contains 'leave')
         anime({
           targets: `#${leaveRowNode.parent}`,
-          duration: 350,
+          duration: 250,
           opacity: 0,
           easing: "linear",
         });
