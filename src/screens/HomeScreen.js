@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import HttpClient from "../api/httpClient";
 import Row from "../components/Row";
 import RowList from "../components/RowList";
-import Axios from "axios";
-import navigation from "../utils/navigation";
 import CardDetail from "../components/CardDetail";
 import Loader from "../components/Loader";
+import navigation from "../utils/navigation";
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -17,18 +17,9 @@ export default class HomeScreen extends Component {
 
   async componentDidMount() {
     try {
-      const response = await Axios.get(
-        "https://api.themoviedb.org/3/movie/top_rated",
-        {
-          params: {
-            api_key: "d7d3962a3e6fec4a4292088ffc71a8c0",
-          },
-        }
-      );
-
       const {
         data: { results = [] },
-      } = response || {};
+      } = (await HttpClient.get("movie/top_rated")) || {};
 
       this.setState({
         movies: results,
