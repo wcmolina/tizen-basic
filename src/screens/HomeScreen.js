@@ -4,22 +4,19 @@ import RowList from "../components/RowList";
 import Axios from "axios";
 import navigation from "../utils/navigation";
 import CardDetail from "../components/CardDetail";
+import Loader from "../components/Loader";
 
 export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
+      loading: true,
       movies: [],
     };
   }
 
   async componentDidMount() {
     try {
-      this.setState({
-        loading: true,
-      });
-
       const response = await Axios.get(
         "https://api.themoviedb.org/3/movie/top_rated",
         {
@@ -46,7 +43,9 @@ export default class HomeScreen extends Component {
 
   render() {
     return this.state.loading ? (
-      <p>Loading...</p>
+      <div className="center">
+        <Loader />
+      </div>
     ) : (
       <>
         <CardDetail />
