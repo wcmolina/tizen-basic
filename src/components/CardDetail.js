@@ -9,7 +9,7 @@ const CardDetail = () => {
     <div className="card-detail">
       <h1>{cardDetails.title || ""}</h1>
       <p className="card-detail-description">
-        {truncate(cardDetails.overview || "", 500)}
+        {truncate(cardDetails.overview || "", 550)}
       </p>
     </div>
   );

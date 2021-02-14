@@ -47,7 +47,7 @@ body {
   width: 12rem;
   position: absolute;
   border: 0.25rem solid #ffffff;
-  bottom: 16.5rem;
+  bottom: 21.5rem;
   left: 4.75rem;
   box-shadow: inset 0px 0px 10px 5px rgba(30, 30, 30, 0.5);
 }
@@ -58,7 +58,7 @@ body {
   left: 0;
   right: 0;
   margin-left: 4.5rem;
-  height: 40rem;
+  height: 45rem;
 }
 
 .row-title {
@@ -74,7 +74,7 @@ body {
 }
 
 .card-detail {
-  margin-left: 4rem;
+  margin-left: 4.5rem;
   padding: 2rem 0;
   > h1 {
     font-size: 3rem;
@@ -83,7 +83,7 @@ body {
 }
 
 .card-detail-description {
-  width: 40rem;
+  width: 50rem;
   color: lightgray;
   font-size: 1.5rem;
   font-weight: 200;
